@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			 
+//       var oldValue =-64;
+//       var newValue=oldValue>>>5;
+//       alert(newValue);
+//       var qs=location.search.substring(1);
+//       var hostName=location.hostname;
+//       var url =location.href;
+//       var num =prompt("Please input your number")
+
+//       if(i==25){
+//       	alert("25");
+//       }else if(i==35){
+//       	alert("35");
+//       }else if(i==45){
+//       	alert("45")
+//       }else {
+//       	alert("Other")
+//       }
+//       function doAdd(){
+//       	if(arguments.length==1){
+//       		alert(arguments[0]+10);
+//       		
+//       	}else if(arguments.length==2){
+//       		alert(arguments[0]+arguments[1]);
+//       	}
+//       }
+//       doAdd(10);
+//       doAdd(30,20);
+//  function doAdd(num1,num2){
+//  	
+//  	arguments[1]=10;
+//  	alert(arguments[0]+num2)
+//  }
+//      function setName(obj){
+//      	obj.name="jonh"
+//      }
+//      var person=new Object();
+//      setName(person);
+//       alert(person.name);
+// function setName(obj){
+// 	obj.name="jpo";
+// 	obj=new Object();
+// 	obj.name="jonh";
+// }
+// var person =new Object();
+// setName(person);
+// alert(person.name);
+// var color ="blue";
+// function changeColor(){
+// 	var antherColor="red";
+// 	function swapColors(){
+// 		var tempColor=antherColor;
+// 		anotherColor=color;
+// 		color=tempColor;
+// 	}
+// 	swapColors();
+// }
+// changeColor(); 用于说明全局变量与作用域链。
+//       function createPerson(name){
+//       	var localPerson=new Object();
+//       	localPerson.name=name;
+//       	return localPerson;
+//       }
+//       var globalPerson=createPerson("Nicholas");
+//       globalPerson=null;
+//      
+//        var person={
+//
+//        };//== var person= new Object();
+//        person.name="ni";
+//        person.age=29;
+//      //对象字面量也是向函数传递大量可选参数的首选方式；
+//    function doAdd(num1,num2){
+//    	arguments[1]=10;
+//    	alert(arguments[0]+num2);//此处num2为严格模式下的num2 前面
+//    	//arguments的赋值并不会对其产生影响
+//    }
+//    doAdd(1)
+//    function addTen(num){
+//    	num+=10;
+//    	return num;
+//    }
+//    var count=20;
+//    var result=addTen(count);
+//    alert(count);
+//function createPerson(name){
+//	var localPerson=new Object();
+//	return localPerson;
+//}//这段执行完后，自动销毁了  但是全局的globalPerson还是不能销毁 所以用null手动销毁他。
+////解除引用的真正作用是让值脱离执行环境，以便垃圾收集器下次运行时，将其回收。instanceof
+//
+//var globalPerson=createPerson("Nicholas");
+//    globalPerson=null;
+          var person = new Object();
+          //将Object的引用类型的一个实例，然后把实例保存在变量person中。使用的构造函数是Object，它只为
+          //新的对象定义了默认的属性与方法。
+//        var person=new Object();
+//        person.name="Nicholas";
+//        person.age=29;
+//        alert(person.name)
+// var person={
+// 	 name:"Nicholas",
+// 	 age:29
+// 	}
+// alert(person.name) 两种方式相同
+   //JavaScript中利用方括号来访问对象属性
+//       var person={};
+//       person.name="Nicholas";
+//       person["first name="]="Nicholas"; 不建议使用变量来访问属性 因为[]总是比点表示法看来比较变扭
+//var colors =new Array("red","blue","green");
+// var colors =new Array(3);
+// var name= new Array("Greg");
+   // 当然 我们创建数组的时候也可以省略麻烦的new 因为 我们不是在创建new Object（） 而且我们也不喜欢用这种方式阿里创建 但是我们要会
+// var color=Array(3);
+// var color=Array("Greg");
+//  var color=["red","blue","green"];
+//  var name=[];
+//  var values=[1,2,];//不要这样！，这样会创建一个包含2或者3项的数组 你浏览器解析过程中肯定会出麻烦
+//  var options =[,,,,,,,,];//不要这样！ 这样会创建8或者9的数组 同理楼上
+    //由于IE8以及之前的浏览器的bug  可能会在你的，后面多加上一个undefined 来补充，后面的玩意。
+//  var colors =["red","blue","green"];
+//   colors[99]="black"
+////   colors[colors[length]="black"
+//   //在末尾添加
+//   
+//   alert(colors.length)
+// 检测Array的方法 isArray() 支持IE9+
+//var colors=["red","blue","green"]
+//alert(colors.toString());
+//alert(colors.valueOf());
+//alert(colors)
+//var person1={
+//	toLocaleString:function(){
+//		return"Nikolaos";
+//		
+//	},
+//	 toString:function(){
+//       return "Nicholas"
+//	 }
+//};
+//var person2={
+//	toLocaleString:function(){
+//		return"Grigorios";
+//	},
+//	toString:function(){
+//		return"Greg";
+//	}
+//};
+//var people=[person1,person2];
+//alert(people);
+//alert(people.toString());
+//alert(people.toLocaleString()); toLocalestring 与 toString的区别 系统内部会自动调动toString方法
+// var colors=["red","blue","green"];
+// alert(colors.join());
+//  var colors=new Array();
+//  var count =colors.push("red","green");
+//  alert(count);
+//  count=colors.push("black");
+//  alert(count);
+//  var item=colors.pop();
+//  alert(item);//剔除后的数组作为保存值返回
+//  alert(colors.length);
+//var colors =["red","blue"];
+//colors.push("brown");
+//colors[3]="black";
+//alert(colors.length);
+//var item =colors.pop();
+//alert(item);
+//var colors =new Array();
+//var count =colors.push("red","green");
+//alert(count);
+//count=colors.push("black");
+//alert(count);
+//var item =colors.shift();
+//alert(item);
+//alert(colors.length)
+// 
+// var colors =new Array();
+// var count =colors.unshift("red","green");
+// alert(count);
+// count=colors.unshift("black");
+// var item=colors.pop();
+// alert(item);
+// alert(colors.length);
+//var values=[1,2,3,4,5];
+//values.reverse();
+//alert(values);
+//var values=[0,1,5,10,15];
+//values.sort();
+//alert(values);
+//function compare(value1,value2){
+//	if(value1<value2){
+//		return 1;
+//	
+//	}else if(value1>value2){
+//		return -1;
+//	}else{
+//		return 0;
+//	}
+//}
+//alert(compare(1,2)); 比较函数
+// var values=[0,1,5,10,15]
+// values.sort(compare)
+// alert(values)
+//function compare(value1,value2){
+//	return value1-value2
+//}
+//var values=[0,1,5,10,15]
+// values.sort(compare)
+// alert(values)
+//var colors=["red","green","blue"];
+// var colors2=colors.concat("yellow",["black","brown"]);
+//alert(colors);
+//alert(colors2);
+//var colors=["red","green","blue","yellow","purple"];
+//var colors1=colors.slice(-5);
+//var colors2=colors.slice(3,4);
+//alert(colors1)
+//alert(colors2)
+//var colors=["red","green","blue"];
+//var removed=colors.splice(0,1);//删除
+//alert(colors);// green blue
+//alert(removed);//red
+//removed=colors.splice(1,0,"yellow","orange")//增添 也可以说插入
+//alert(colors)//yellow orange green blue
+//alert(removed)// 返回一个空数组
+//removed=colors.splice(1,1,"red","purple")//替换
+//alert(colors)
+//var numbers=[1,2,3,4,5,4,3,2,1];
+//alert(numbers.indexOf(4));
+//alert(numbers.lastIndexOf(4));
+//alert(numbers.lastIndexOf(4,4));
+//alert(numbers.indexOf(4,4));
+//var person={name:"Nicholas"};
+//var people=[{name:"Nicholas"}];
+//var morePeople=[person];
+//alert(people.indexOf(person));
+//alert(morePeople.indexOf(person))
+//  
+//var numbers=[1,2,3,4,5,4,3,2,1];
+// var everyResult=numbers.every(function(item,index,array){
+// 	return(item>2);
+// })
+// alert(everyResult)
+// var someResult=numbers.some(function(item,index,array){
+// 	 return(item>2);
+// })
+// alert(someResult);
+// var filterResult=numbers.filter(function(item,index,array){
+// 	 return(item>2);
+// });
+// alert(filterResult);
+// var mapResult=numbers.map(function(item,index,array){
+// 	return  item*2;
+// 	
+// });
+// alert(mapResult)
+// numbers.forEach(function(item,index,array){
+// 	   alert(numbers[1])
+// })
+//var values=[1,2,3,4,5];
+//var sum=values.reduce(function(prev,cur,index,array){
+//	 return prev+cur
+//})
+//alert(sum)
+//var values=[1,2,3,4,5];
+//var sum =values.reduceRight(function(prev,cur,index,array){
+//	return prev+cur;
+//})
+//alert(sum)
+// var someDate=new Date(Date.parse("May 25,2004"))
+// alert(someDate)
+//var y2k=new Date(2000,0);
+//var allFive=new Date(2005,4,5,17,55,55)//这样不用Date.UTC()就根据本地时间来创建了 不会出错
+//alert(y2k)
+//alert(allFive)//日期还是根据地区时间来创建的
+//function doSometing(){
+//
+//}
+//var start=Date.now();
+//doSometing()
+//var stop =Date.now()
+//result=stop-start;
+//alert(result)  //如何解决Date.now的兼容性 利用+new Date()来解决
+//var start =+new Date();
+//var stop =+new Date();
+//result=start-stop;
+//alert(result)
+// var date1=new Date(2007,0,1);
+// var date2=new Date(2007,1,1);
+// alert(date1<date2);
+// alert(date1>date2);
+// toDateString()-以特定于实现的格式显示星期几，月，日＆年；
+//toTimeString()-以特定于实现的格式显示时，分，秒和时区；
+//toLocalDateString()-以特定于地区的格式显示星期几，月，日＆年
+//toLocalTimeString()-以特定于实现的格式时，分。秒。
+//toUTCString()-以特定于实现的格式显示完整的UTC时间
+// var now = getTime("May 25,2004");
+// alert(now)
+// var array =[1,2,3,4,5,4,3,2,1];
+// alert(array.indexOf(4,4))//返回最后一次找到的数值位置
+// alert(array.lastIndexOf(4,4));//返回最先一次找到数值的位置
+   var numbers =[1,2,3,4,5,4,3,2,1];
+ var everyResult=numbers.every(function(item,index,array){
+ 	return(item>2);
+ 	
+ });
+ alert(everyResult);
+  var everyResult=numbers.some(function(item,index,array){
+ 	return(item>2);
+ 	
+ });
+ alert(everyResult);
+  var everyResult=numbers.filter(function(item,index,array){
+ 	return(item>2);//返回符合的数组本身
+ 	
+ });
+ alert(everyResult);
+  var everyResult=numbers.map(function(item,index,array){
+ 	return(item>2);//返回每个数组判断结果的布尔值
+ 	
+ });
+ alert(everyResult);
+  var everyResult=numbers.forEach(function(item,index,array){
+ 	return(item>2);// 没有返回值
+ 	
+ });
+ alert(everyResult);
+ var values=[1,2,3,4,5];
+ var sum=values.reduce(function(pre,cur,index,array){
+ 	return pre+cur// 前一个值，当前值，索引，数组对象
+ });
+ alert(sum)
+  var values=[1,2,3,4,5];
+ var sum=values.reduceRight(function(pre,cur,index,array){
+ 	return pre+cur// 前一个值，当前值，索引，数组对象
+ });
+ alert(sum)
+
+
+
+
+
+
+
+
+
+    
+    
+    
+  
+      
+         
+         
+      
+ 
+             
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

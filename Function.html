@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+//			function sum(num1,num2){
+//				return num1+num2;
+//			}
+//			var sum=function(num1,num2){
+//				return num1+num2
+//				
+//			};
+//			var sum= new Function("num1","num2","return num1+num2")//不推荐
+//			//理解函数是对象 函数名是指针  影响性能
+//function sum(num1,num2){
+//	 return num1+num2;
+//}
+//alert(sum(10,10))//20
+//var anotherSum =sum;//赋值的内容 赋值后 与原本函数的sum已经没有关系了
+//alert(anotherSum(10,10))//20
+//sum=null
+//alert(anotherSum(10,10))//20
+//解释深入理解为什么 ES没有重载功能
+// function addSomeNumber(num){
+// 	return num+100;
+// }
+// function addSomeNumber(num){
+// 	return num+200
+// }
+//var result =addSomeNumber(100)
+// alert(result)
+//   var addSomeNumber=function(num){
+//   	 return num+100
+//   };
+//   addSomeNumber=function(num){
+//   	return num+200
+//   };
+//   var result=addSomeNumber(100);
+//   alert(result)
+  // 解释声明
+//  alert( sum(10,10));
+//   var sum=function(num1,num2){
+//  	return num1+num2
+//  };
+//function add10(num){
+//	return num+10;
+//	
+//}
+// var result1= callSomeFunction(add10,10);
+// alert(result1);
+// function getGreeting(name){
+// 	return"Hello,"+name;
+// }
+// var result2=callSomeFunction(getGreeting,"Nicholas");
+// alert(result2);
+//作为值的函数    
+// function callSomeFunction(someFunction,someArgument){
+// 	   return someFunction(someArgument)
+// }
+//  function add10(num){
+//  	return num+10;
+//  }
+//   var  result1 =callSomeFunction(add10,10);
+//  alert(result1);
+//  function getGreeting(name){
+//  	return "Hello,"+name;
+//  }
+//    var result2= callSomeFunction(getGreeting,"Nicholas");
+//    alert(result2)
+//   function createCompareisonFunction(propertyName){
+//   	return function(object1,object2){
+//   		var value1 =object1[propertyName];
+//   		var value2 =object2[propertyName];
+//   		if(value1<value2){
+//   			return -1;
+//   		}else if(value1>value2){
+//   			return 1	
+//   			
+//   		}else{
+//   			return 0
+//   		}//正常逻辑
+//   	};
+//   }
+//   var date =[{name:"Zachary",age:28},{name:"Nicholas",age:29}];
+//   date.sort(createCompareisonFunction("name"));
+//   alert(date[0].name );
+//   date.sort(createCompareisonFunction("age"));
+//   alert(date[0].name);
+//function fatorial(num){
+//	if(num<=1){
+//		return 1;
+//		
+//	}else{
+//		return num*agruments.callee(num-1)
+//		
+//	}
+//	
+//}
+// function factorial(num){
+// 	  if(num<=1){
+// 	  	return 1;
+// 	  }else{
+// 	  	return num * arguments.callee(num-1);
+// 	  }
+// } // 经典的递归函数
+//var trueFactorial = factorial;
+//
+// factorial=function(){
+//	       return 0;
+//};
+//alert(trueFactorial(5));
+//alert(factorial(5));
+//window.color="red";
+//var o ={color:"blue"};
+//function sayColor(){
+//	alert(this.color)//调用后生效
+//}
+//sayColor();//调用全局this的 red
+//o.sayColor=sayColor
+//o.sayColor()//调用新赋值后的sayColor blue 与原sayColor分离的过程   this此时指向局部的o
+//function outer(){
+//	inner();
+//}
+//function inner(){
+//	alert(inner.caller);
+//	
+//}
+//outer()
+//function outer(){
+//	inner();
+//}
+//function inner(){
+//	alert(arguments.callee.caller);
+//	
+//}
+//outer()
+//function sum(num1,num2){
+//	return num1+num2;
+//	
+//	
+//}
+// function callSum1(num1,num2){
+// 	return sum.apply(this,arguments);
+// }
+// function callSum2(num1,num2){
+// 	return sum.apply(this,[num1, num2] )
+// }
+// alert(callSum1(10,10));
+// alert(callSum2(10,10));
+//window.color="red";
+//var o={color:"blue"};
+//function sayColor(){
+//	  alert(this.color)
+//}
+//  var objectSayColor=sayColor.bind(o);
+//  objectSayColor();
+//var s1="some text";
+//var s2=s1.substring(2)
+// var s1 =new String("some text");
+// var s2 =s1.substring(2);
+// s1=null; //引用类型
+// 
+// var s1="some text";
+// s1.color="red";
+// alert(s1.color)// 基本包装类型自动销毁
+// \n
+//      var obj=new Object("some text");
+//      alert(obj instanceof String);
+//      var value ="25";
+//      var number=Number(value);
+//      alert(typeof number)
+//      var obj =new Number(value);
+//      alert(typeof obj)
+// var booleanObject=new Boolean(true);
+// var falseObject= new Boolean(false);
+// var result = falseObject&&true;
+// alert(result);//true
+// var falseValue=false;
+// result=falseValue&&true;
+// alert(result);//false
+// alert(typeof falseObject);//obejct
+// 
+// alert(typeof falseValue); // boolean
+// alert(falseObject instanceof Boolean);//true
+// alert(falseValue instanceof Boolean);//false
+//var numberObject= new Number(10)
+//var num=10;
+//alert(num.toString());
+//alert(num.toString(2));
+//alert(num.toString(10));
+//alert(num.toString(8));
+//alert(num.toString(12));
+//alert(num.toString(16));
+// alert(num.toFixed(2))
+//var num=99;
+//alert(num.toPrecision(1));//1e+2=100
+//alert(num.toPrecision(2));
+//alert(num.toPrecision(3)) toPrecision() toExponential() toFixed();
+// var stringObject= new String("hello world");
+//  var stringValue="hello world";
+//  alert(stringValue.length)
+// var stringValue="hello world";
+// alert(stringValue.charAt(1));//获取1的位置字符
+// alert(stringValue.charCodeAt(1))//获取1位置字符的字符编码；
+// var stringValue="hello world";
+// alert(stringValue[1]);//支持IE8 以上 IE7 会返回undefined；
+//var stringValue="hello";
+//var result=stringValue.concat("world","！");
+//alert(result);
+//alert(stringValue);//不改变原值；
+// slice() substr() substring
+// var stringValue="hello world";
+//// alert(stringValue.slice(3));
+//// alert(stringValue.substr(3));
+//// alert(stringValue.substring(3));
+//// alert(stringValue.slice(3,7));
+//// alert(stringValue.substr(3,7));
+//// alert(stringValue.substring(3,7));
+// alert(stringValue.slice(-3));
+// alert(stringValue.substr(-3));
+// alert(stringValue.substring(-3));
+// alert(stringValue.slice(3,-4));
+// alert(stringValue.substr(3,-4));
+// alert(stringValue.substring(3,-4)); 
+//其中slice()将传入的负值与字符串长度相加，substr()将负的第一个参数加上字符串的长度，而第二个转换为0  substring()将所有负数转换为0
+//var stringVlaue="hello world";
+//alert(stringVlaue.indexOf("o"))
+//alert(stringVlaue.lastIndexOf("o"))// 如果"o"在字符串中只出现一次 两者返回相同的值
+// var stringValue="hello world";
+// alert(stringValue.indexOf("o",6));
+// alert(stringValue.lastIndexOf("o",6));
+//var stringValue="Lorem ipsum dolor sit amet,consectetur adipsicing elit";
+//var positions= new Array();
+//var pos=stringValue=stringValue.indexOf("e");
+//while(pos>-1){
+//	positions.push(pos);
+//  pos=stringValue.indexOf("e".pos+1)
+//}
+//alert(positions)
+// var stringValue=" hello  world          ";
+// var trimmedStringValue=stringValue.trimLeft();
+// alert(stringValue);
+// alert(trimmedStringValue)
+//var stringValue="hello world"
+// alert(stringValue.toLocaleLowerCase())
+// alert(stringValue.toUpperCase())
+// alert(stringValue.toLocaleLowerCase())
+//alert(stringValue.toLocaleUpperCase()) 区别有些地方的地域问题
+ var text="cat bat sat fat";
+// var pattern=/.at/;
+//var matches=text.match(pattern);
+//alert(matches.index);
+//alert(matches[0]);
+//alert(pattern.lastIndex)
+//var pos=text.search(/at/);
+//alert(pos);
+//
+//var result=text.replace(/at/g,"ond");
+//alert(result);
+//result=text.replace("at","ond");
+//alert(result);
+// 
+// var text="cat,bat,sat,fat";
+// result=text.replace(/(.at)/g,"word($1)");
+// alert(result);
+//function htmlEscape(text){
+//	return text.replace(/[<>"&]/,function(match,pos,originalText){
+//		switch(match){
+//			case"<":
+//			 return"&lt;";
+//			 case">":
+//			 return"&gt;";
+//			 case"&":
+//			 return"&amp;";
+//			 case"\"":
+//			 return"&quot;";
+//		}
+//});
+//}
+// alert(htmlEscape("<p class=\"greeting\">Hello world!</p>")); //&lt;p class=&quot;greeting&quot;&gt;Hello world!&lt;/p&gt;
+var colorText="red,blue,green,yellow";
+var colors1=colorText.split(",");
+var colors2=colorText.split(",",2);
+var colors3=colorText.split(/[^\,]+/)
+alert(colors1)
+alert(colors2)
+alert(colors3)
+  
+
+ 
+ 
+
+  
+
+   
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

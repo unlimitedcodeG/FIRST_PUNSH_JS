@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function Person(name,age,job){
+				this.name=name;
+				this.age=age;
+				this.job=job;
+				this.friends=["Shelby","Court"];
+				
+			}
+			Person.prototype={
+				constructor:Person,
+				sayName:function(){
+					alert(this.name);
+				}
+			}
+			  var person1 =new Person("Nicholas",29,"Software Engineer");
+			  var person2 =new Person("Greg",27,"Doctor");
+			  person1.friends.push("Van");
+			  alert(person1.friends);
+			  alert(person2.friends);
+			  alert(person1.friends===person2.friends);
+			  alert(person1.sayName===person2.sayName);
+			  // 在这个例子中，实例属性都是在构造函数中定义的，而由所有实例共享的属性constructor和方法sayName()则是在原型中定义的。而修改了person1.friends(向其中添加一个新字符串)，并不会影响到person2.friends,因为他们引用了不同的数组。   
+			  // 动态原型模式
+			  // 换句话来说，可以通过检查某个应该存在的方法是否有效，来决定是否需要初始化原型。来看一个例子
+			    function Person(name,age,job){
+			    	this.name=name;
+			    	this.age=age;
+			    	this.job=job;
+			    	 if( typeof this.sayName!="function"){
+			    	 	Person.prototype.sayName=function(){
+			    	 		alert(this.name);
+			    	 	};
+			    	 }
+			    }
+			    var friend =new Person("Nicholas",29,"Software Engineer");
+			    friend.sayName();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

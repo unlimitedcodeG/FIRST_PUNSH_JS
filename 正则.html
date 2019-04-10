@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var patt1=new RegExp("e");
+
+     document.write(patt1.test("The best things in life are free")); 
+     function hasPrototypeProperty(object,name){
+      	 return object.hasOwnProperty(name)&&(name in object);
+      }
+      // 由于 in操作符只要通过对象就能访问到属性就返回true，hasOwnProperty()只在属性存在于实例中才会返回true，因此只要in操作符返回true而hasOwnProperty返回false，就可以知道确定属性是原型中的属性。下面来看看上面定义的函数hasPrototypeProperty()的用法。
+        function Person(){
+        	
+        }
+        Person.prototype.name="NIcholas";
+        Person.prototype.age=29;
+        Person.prototype.job="Software Engineer";
+        Person.prototype.sayName=function(){
+        	alert(this.name);
+        }
+        var person =new Person();
+        alert(hasPrototypeProperty(person,"name"));
+          person.name="Greg";
+        alert(hasPrototypeProperty(person,"name"));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

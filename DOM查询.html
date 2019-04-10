@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<script type="text/javascript">
+			function myClick(idStr,fun){
+				 var btn=document.getElementById(idStr);
+				 btn.onclick=fun;
+				 
+			}
+			window.onload=function(){
+				var btn01=document.getElementById("btn01");
+				btn01.onclick=function(){
+					var bj=document.getElementById("bj");
+					alert(bj.innerHTML);
+				};
+				var btn02=document.getElementById("btn02");
+				btn02.onclick=function(){
+					var lis=document.getElementsByTagName("li");
+					alert(lis.length);
+					for(var i=0;i<lis.length;i++){
+						alert(lis[i].innerHTML)
+					}
+				}
+				var btn03=document.getElementById("btn03");
+				btn03.onclick=function(){
+					var inputs=document.getElementsByName("gender");
+//					alert(inputs.length)
+                   for(var i=0;i<inputs.length;i++){
+//                 	alert(inputs[i].innerHTML);
+                       alert(inputs[i].className)
+
+                   }
+				}
+				var btn04=document.getElementById("btn04");
+				btn04.onclick=function(){
+					var city=document.getElementById("city");
+					 var lis=city.getElementsByTagName("li");
+					 for (var i=0;i<lis.length;i++) {
+					 	alert(lis[i].innerHTML)
+					 	
+					 }
+				}
+				var btn05=document.getElementById("btn05");
+				btn05.onclick=function(){
+					var city=document.getElementById("city");
+//					var cns=city.childNodes;
+                  var cns2 = city.children;
+					alert(cns2.length);
+				
+				}
+				var btn06 = document.getElementById("btn06");
+				btn06.onclick = function(){
+					//获取id为phone的元素
+					var phone = document.getElementById("phone");
+					//返回#phone的第一个子节点
+					//phone.childNodes[0];
+					//firstChild可以获取到当前元素的第一个子节点（包括空白文本节点）
+					var fir = phone.firstChild;
+					
+					//firstElementChild获取当前元素的第一个子元素
+					/*
+					 * firstElementChild不支持IE8及以下的浏览器，
+					 * 	如果需要兼容他们尽量不要使用
+					 */
+					//fir = phone.firstElementChild;
+					
+					alert(fir);
+				};
+				
+				
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<div id="total">
+			<div class="inner" >
+			<p>你喜欢那个城市</p>
+			<ul id="city">
+			<li id="bj">北京</li>	
+			<li>上海</li>
+			<li>东京</li>
+			<li>首尔</li>
+		
+			</ul>
+			<br />
+			<br />
+				<p>你喜欢哪款单机游戏？</p>
+				<ul id="game">
+					<li id="rl">红警</li>
+					<li>暴力摩托</li>
+					<li>合金弹头</li>
+					<li>CS</li>
+				</ul>
+				<br />
+				<br />
+				<p> 你的手机操作系统是?</p>
+				<ul id='phone'>
+					<li>IOS</li>
+					<li id="android">Android</li>
+					<li>WINDOW PHONE</li>
+				</ul>
+				
+			</div>
+			<div class="inner">
+				gender:
+			 <input class="hello" type="radio" name="gender" value="male" />
+			 Male
+			 <input class="hello" type="radio" name="gender" value="female" />
+			 Female
+			 <br />
+			 <br />
+			 name:
+			 <input type="text" name="name" id="username" 	value="abcde" />
+			</div>
+			
+		</div>
+		<div id="btnlist">
+			<div><button id="btn01">查询#bj节点</button></div>
+			<div><button id="btn02">查找所有li节点</button></div>
+			<div><button id="btn03">查找name=gender的所有节点</button></div>
+			<div><button id="btn04">查询#city下所有li的节点</button></div>
+			<div><button id="btn05">返回#city的所有子节点</button></div>
+			<div><button id="btn06">返回#phone的第一个子节点</button></div>
+			<div><button id="btn07">返回#bj的父节点</button></div>
+			<div><button id="btn08">返回#android的前一个兄弟节点</button></div>
+			<div><button id="btn09">返回#username的value属性值</button></div>
+			<div><button id="btn10">设置#username的value属性值</button></div>
+			<div><button id="btn11">返回#bj的文本值</button></div>
+			
+			
+			
+			
+			
+		</div>
+		
+		
+		
+	</body>
+</html>

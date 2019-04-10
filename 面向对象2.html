@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>面向对象2 高级JavaScript部分</title>
+		<script>
+			function Person(){
+				
+			}
+			Person.prototype.name="Nicholas";
+			Person.prototype.age=19;
+			Person.prototype.job="Software Engineer";
+			Person.prototype.sayName=function(){
+				alert(this.name);
+			};
+			var keys=Object.keys(Person.prototype);//Object.keys()用于取得对象中可枚举的实例属性
+			alert(keys);
+			var p1 =new Person();
+			p1.name="Rob";
+			p1.age=31;
+			var p1keys=Object.keys(p1);
+			alert(p1keys);
+			// 如果你想获得所有实例属性的话，又不管它是否可枚举，都使用Object.getOwnPropertyNames()；可以用来代替for in循环支持者两个方法的浏览器都为IE9+
+			var keys=Object.getOwnPropertyNames(Person.prototype);
+			alert(keys);
+			//更简单的原型语法，用一个包含所有属性和方法的对象字面量来重写整个原型对象，如下面的例子所示。
+			  function Person(){
+			  	
+			  }
+			  Person.prototype={
+			  	name:"Nicholas",
+			  	age:29,
+			  	job:"Software Engineer",
+			  	sayName:function(){
+			  		alert(this.name);
+			  	}
+			  };//我自己的感悟嘛，就是相当于我们直接把prototype当成一个对象字面量的盒子然后直接往里塞属性了。这时使用的语法，本质上重写了默认的prototype对象，因此constructor属性也就变成了新对象constructor属性(指构造函数的Object)，不能再指向Person函数了。尽管instanceof操作符还能返回正确的结果，但是通过constructor一家无法确立对象的类型了。
+			  var friend =new Person();
+			  alert(friend instanceof Object);
+			  alert(friend instanceof Person);
+			  alert(friend.constructor==Person);
+			  alert(friend.constructor==Object);
+			  //如果说constructor的值真的很重要，可以像下面这样特意将它设置回适当的值。
+			  function Person(){
+			  	
+			  }
+			  Person.prototype={
+			  	constructor:Person,
+			  	name:"Nicholas",
+			  	age:29,
+			  	job:"Software Engineer",
+			  	sayName:function(){
+			  		alert(this.name);
+			  	}
+			  };
+			  //注意，以这种方式重设的constructor属性会导致它的[[Enumberable]特性被设置为true。默认情况下，原生的constructor属性是不可枚举的，因此如果你使用兼容ES5的JS引擎，可以试一试Object.defineProperty()
+			   function Person(){
+			   	
+			   }
+			   Person.prototype={
+			   	name:"Nicholas",
+			   	age:29,
+			   	job:"Software Engineer",
+			   	sayName:function(){
+			   		alert(this.name);
+			   	}
+			  
+			   };// 重设构造函数，只适用于ES5兼容的浏览器，
+			   Object.defineProperty(Person.prototype,"constructor",{
+			   	enumerable:false,
+			   	value:Person
+			   });
+			 //原型的动态性
+			 var friend =new Person();
+			 Person.prototype.sayHi=function(){
+			 	alert("h1");
+			 };
+			 friend.sayHi()
+			 // 我们知道，调用构造函数时会为实例添加一个指向最初原型的[[Prototype]]指针，而把原型修改为另外一个对象就等于切断了构造函数与最初原型之间的联系。  
+			    // 请记住：实例中的指针仅指向原型，而不指向构造函数。看下面的例子。
+			     function Person(){
+			     	
+			     }
+			     var friend =new Person();
+			    Person.prototype={
+			     constructor:Person,
+			     name:"Nicholas",
+			     age:29,
+			     job:"Software Engineer",
+			     sayName:function(){
+			     	alert(this.name);
+			     }
+			    };
+			    friend.sayName()
+			     
+			  
+			  
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

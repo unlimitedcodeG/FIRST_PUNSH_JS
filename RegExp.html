@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		    
+			var pattern=/at/g;
+			//匹配字符串中所有“at”的实例
+			var pattern2=/[bc]at/i
+			//匹配以bat或者cat开头，不区分大小写。
+			var pattern3=/.at/gi
+			// 匹配所有以“at”结尾的三个字符的组合，不区分大小写 此处.表示用空字符表示三个字符
+			//. 为元字符
+			//元字符的概念
+			//([\ ^ $ |)?*+.])
+			//匹配第一个以bat或者cat开头
+			var pattern1=/[bc]at/i
+			//匹配第一个为[bc]at开头的 不区分大小写
+			var $pattern2=/\[bc\]at/
+			//匹配所有以“at”结尾的三个字符的组合，不区分大小写。
+			var pattern3=/.at/i
+			//匹配所有的“.at”不区分大小写
+			var pattern4=/\.at/gi
+			
+			var pattern2= new RegExp("[bc]at","i")//利用 new RegEexp() 以构造函数的方法创建正则表达式
+			
+			
+			
+			var re=null;
+                var i;
+//			for (i=0;i<10;i++) {
+//				re=/cat/g
+//				re.test("catastrophe") 字面量类型的构造函数会在遍历的循坏体中失效
+//						
+//			}
+//			for (i<0;i<10;i++) {
+//				re=new RegExp("cat","g");
+//			    re.test("catastrophe")
+//			    
+//				
+//			}
+//			alert(re)
+//  var pattern =/\[bc\]at/i;
+//    alert(pattern1.global);
+//    alert(pattern1.ignoreCase);
+//    alert(pattern1.multiline);
+//    alert(pattern1.lastIndex);
+//    alert(pattern1.source);
+//    var pattern2= new RegExp("\\[bc]\\at","i")
+//     alert(pattern1.global);
+//    alert(pattern1.ignoreCase);
+//    alert(pattern1.multiline);
+//    alert(pattern1.lastIndex);
+//    alert(pattern1.source);以上两者为构造函数形式的正则表达式与字面量形式的正则表达式
+//var text="mom and dad and baby";
+//var pattern =/mom( and dad( and baby)?)?/gi
+//var matches=pattern.exec(text);
+//alert(matches.index)//0 初始的位置就捕获了
+//alert(matches.input)// 输出完整数组
+//alert(matches[0])//mom and dad and baby
+//alert(matches[1])//  and dad and baby
+//alert(matches[2])// and baby
+         var text ="cat，bat，sat，fat"
+//       var pattern1=/.at/;
+//       var matches=pattern1.exec(text);
+//       alert(matches.index);
+//       alert(matches[0]);
+//       alert(pattern1.lastIndex);
+//       var pattern2 =/.at/g
+//       var matches=pattern2.exec(text);
+//       alert(matches.index);
+//       alert(matches[0]);
+//       alert(pattern2.lastIndex);
+//       matches=pattern2.exec(text);
+//       alert(matches.index);
+//       alert(matches[0]);
+//       alert(pattern2.lastIndex);
+//       
+//  var text="000-00-0000";
+//    var pattern=/\d{3}-\d{2}-\d{4}/
+//    if(pattern.test(text)){
+//    	 alert("The pattern was matched.")
+//    } 可以用来测试电话号码的格式
+// var pattern= new RegExp("\\[bc\\]at","gi");
+// alert(pattern.valueOf());
+// alert(pattern.toLocaleString())
+//var patt1=new RegExp("e");
+//document.write(patt1.test("The best things in life are free"));
+//
+//patt1.compile("d");//直接把e变成d
+//
+//document.write(patt1.test("The best things in life are free"));
+//       var text ="this has been a short summer";
+//       var pattern=/(.)hort/g;
+//       if(pattern.test(text)){
+//       	alert(RegExp.input);/返回含有hort的所有字符串
+//       	alert(RegExp.leftContext)、返回short左边的字符串
+//       	alert(RegExp.rightContext) 返回short右边的所有字符串
+//       	alert(RegExp.lastMatch)返回(.)包括他自己的匹配项
+//       	alert(RegExp.lastParen)返回(.)所捕获的字母
+//       	alert(RegExp.multiline) 单行text 自己false
+//       	
+//       	
+//       }
+//var text ="this has been a short summer";
+//       var pattern=/(.)hort/g;
+//       if(pattern.test(text)){
+//       	alert(RegExp.$_);
+//       	alert(RegExp["$`"])
+//       	alert(RegExp["$'"]);
+//       	alert(RegExp["$&"]);
+//       	alert(RegExp["$+"]);
+//       	alert(RegExp["$*"])
+//       	
+//       	
+//       }
+//       
+  var text="this has been a short summer";
+  var pattern=/(..)or(.)/g
+       if(pattern.test(text)){
+       	alert(RegExp.$1);//sh
+       	alert(RegExp.$2)//t
+       }
+         
+   
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
